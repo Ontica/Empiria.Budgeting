@@ -1,5 +1,10 @@
 ﻿# Empiria Budgeting System
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bee7df368e8e4e7e9d1da0c8aeca0bed)](https://app.codacy.com/gh/Ontica/Empiria.Budgeting/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+&nbsp; &nbsp;
+[![Maintainability](https://api.codeclimate.com/v1/badges/8a247a73100dca989c0c/maintainability)](https://codeclimate.com/github/Ontica/Empiria.Budgeting/maintainability)
+
+
 This repository contains the Empiria Budgeting System's backend modules 
 written in C# 7.0 using .NET Framework 4.8, with a Http/Json Web Api integration module
 tailored with ASP .NET.
