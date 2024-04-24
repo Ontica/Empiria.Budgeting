@@ -11,6 +11,8 @@ using System;
 
 using Empiria.Services;
 
+using Empiria.Budgeting.Adapters;
+
 namespace Empiria.Budgeting.UseCases {
 
   /// <summary>Use cases for budget accounts searching and retriving.</summary>
@@ -30,10 +32,10 @@ namespace Empiria.Budgeting.UseCases {
 
     #region Use cases
 
-    public FixedList<NamedEntityDto> BudgetTypesList() {
+    public FixedList<BudgetTypeDto> BudgetTypesList() {
       FixedList<BudgetType> budgetTypes = BudgetType.GetList();
 
-      return budgetTypes.MapToNamedEntityList();
+      return BudgetTypesMapper.Map(budgetTypes);
     }
 
     #endregion Use cases

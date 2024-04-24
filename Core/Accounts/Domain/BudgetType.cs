@@ -32,7 +32,7 @@ namespace Empiria.Budgeting {
 
 
     static public FixedList<BudgetType> GetList() {
-      return BaseObject.GetList<BudgetType>("ObjectName", "ObjectId DESC")
+      return BaseObject.GetList<BudgetType>(string.Empty, "ObjectName")
                        .FindAll(x => x.Status != StateEnums.EntityStatus.Deleted)
                        .ToFixedList();
     }
@@ -42,6 +42,16 @@ namespace Empiria.Budgeting {
 
 
     #endregion Constructors and parsers
+
+    #region Properties
+
+    public FixedList<BudgetAccountSegmentType> SegmentTypes {
+      get {
+        return base.ExtendedDataField.GetFixedList<BudgetAccountSegmentType>("segmentTypes");
+      }
+    }
+
+    #endregion Properties
 
   }  // class BudgetType
 

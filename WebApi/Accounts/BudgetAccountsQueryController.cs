@@ -11,6 +11,7 @@ using System.Web.Http;
 
 using Empiria.WebApi;
 
+using Empiria.Budgeting.Adapters;
 using Empiria.Budgeting.UseCases;
 
 namespace Empiria.Budgeting.WebApi {
@@ -27,12 +28,11 @@ namespace Empiria.Budgeting.WebApi {
       base.SetOperation($"Se leyó la lista de tipos de presupuestos.");
 
       using (var usecases = BudgetAccountsUseCases.UseCaseInteractor()) {
-        FixedList<NamedEntityDto> list = usecases.BudgetTypesList();
+        FixedList<BudgetTypeDto> list = usecases.BudgetTypesList();
 
         return new CollectionModel(base.Request, list);
       }
     }
-
 
     #endregion Web Apis
 
