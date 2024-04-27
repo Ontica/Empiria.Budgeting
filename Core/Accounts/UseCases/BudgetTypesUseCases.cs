@@ -2,9 +2,9 @@
 *                                                                                                            *
 *  Module   : Budget Accounts                            Component : Use cases Layer                         *
 *  Assembly : Empiria.Budgeting.Core.dll                 Pattern   : Use case interactor class               *
-*  Type     : BudgetAccountsUseCases                     License   : Please read LICENSE.txt file            *
+*  Type     : BudgetTypesUseCases                        License   : Please read LICENSE.txt file            *
 *                                                                                                            *
-*  Summary  : Use cases for budget accounts searching and retriving.                                         *
+*  Summary  : Use cases for budget types searching and retriving.                                            *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System;
@@ -15,17 +15,17 @@ using Empiria.Budgeting.Adapters;
 
 namespace Empiria.Budgeting.UseCases {
 
-  /// <summary>Use cases for budget accounts searching and retriving.</summary>
-  public class BudgetAccountsUseCases : UseCase {
+  /// <summary>Use cases for budget types searching and retriving.</summary>
+  public class BudgetTypesUseCases : UseCase {
 
     #region Constructors and parsers
 
-    protected BudgetAccountsUseCases() {
+    protected BudgetTypesUseCases() {
       // no-op
     }
 
-    static public BudgetAccountsUseCases UseCaseInteractor() {
-      return UseCase.CreateInstance<BudgetAccountsUseCases>();
+    static public BudgetTypesUseCases UseCaseInteractor() {
+      return UseCase.CreateInstance<BudgetTypesUseCases>();
     }
 
     #endregion Constructors and parsers
@@ -40,6 +40,6 @@ namespace Empiria.Budgeting.UseCases {
 
     #endregion Use cases
 
-  }  // class BudgetAccountsUseCases
+  }  // class BudgetTypesUseCases
 
 }  // namespace Empiria.Budgeting.UseCases

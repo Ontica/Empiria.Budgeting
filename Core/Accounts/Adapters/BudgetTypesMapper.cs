@@ -19,6 +19,8 @@ namespace Empiria.Budgeting.Adapters {
       return budgetTypes.Select(x => Map(x)).ToFixedList();
     }
 
+    #region Helpers
+
     static private BudgetTypeDto Map(BudgetType budgetType) {
       return new BudgetTypeDto {
         UID = budgetType.UID,
@@ -28,17 +30,19 @@ namespace Empiria.Budgeting.Adapters {
     }
 
 
-    static private FixedList<BudgetAccountSegmentTypeDto> Map(FixedList<BudgetAccountSegmentType> segmentTypes) {
+    static private FixedList<BudgetSegmentTypeDto> Map(FixedList<BudgetSegmentType> segmentTypes) {
       return segmentTypes.Select(x => Map(x)).ToFixedList();
     }
 
 
-    static private BudgetAccountSegmentTypeDto Map(BudgetAccountSegmentType segmentType) {
-      return new BudgetAccountSegmentTypeDto {
+    static private BudgetSegmentTypeDto Map(BudgetSegmentType segmentType) {
+      return new BudgetSegmentTypeDto {
         UID = segmentType.UID,
         Name = segmentType.DisplayName
       };
     }
+
+    #endregion Helpers
 
   }  // class BudgetTypesMapper
 

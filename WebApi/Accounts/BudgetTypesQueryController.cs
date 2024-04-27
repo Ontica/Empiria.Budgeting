@@ -2,9 +2,9 @@
 *                                                                                                            *
 *  Module   : Budget Accounts                              Component : Web Api                               *
 *  Assembly : Empiria.Budgeting.WebApi.dll                 Pattern   : Query Controller                      *
-*  Type     : BudgetAccountsQueryController                License   : Please read LICENSE.txt file          *
+*  Type     : BudgetTypesQueryController                   License   : Please read LICENSE.txt file          *
 *                                                                                                            *
-*  Summary  : Query web API used to retrive budget accounts.                                                 *
+*  Summary  : Query web API used to retrive budget types.                                                    *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System.Web.Http;
@@ -16,8 +16,8 @@ using Empiria.Budgeting.UseCases;
 
 namespace Empiria.Budgeting.WebApi {
 
-  /// <summary>Query web API used to retrive budget accounts.</summary>
-  public class BudgetAccountsQueryController : WebApiController {
+  /// <summary>Query web API used to retrive budget types.</summary>
+  public class BudgetTypesQueryController : WebApiController {
 
     #region Web Apis
 
@@ -27,7 +27,7 @@ namespace Empiria.Budgeting.WebApi {
 
       base.SetOperation($"Se leyó la lista de tipos de presupuestos.");
 
-      using (var usecases = BudgetAccountsUseCases.UseCaseInteractor()) {
+      using (var usecases = BudgetTypesUseCases.UseCaseInteractor()) {
         FixedList<BudgetTypeDto> list = usecases.BudgetTypesList();
 
         return new CollectionModel(base.Request, list);
@@ -36,6 +36,6 @@ namespace Empiria.Budgeting.WebApi {
 
     #endregion Web Apis
 
-  }  // class BudgetAccountsQueryController
+  }  // class BudgetTypesQueryController
 
 }  // namespace Empiria.Budgeting.WebApi

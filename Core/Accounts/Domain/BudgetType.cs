@@ -45,9 +45,9 @@ namespace Empiria.Budgeting {
 
     #region Properties
 
-    public FixedList<BudgetAccountSegmentType> SegmentTypes {
+    public FixedList<BudgetSegmentType> SegmentTypes {
       get {
-        return base.ExtendedDataField.GetFixedList<BudgetAccountSegmentType>("segmentTypes");
+        return base.ExtendedDataField.GetFixedList<BudgetSegmentType>("segmentTypes");
       }
     }
 

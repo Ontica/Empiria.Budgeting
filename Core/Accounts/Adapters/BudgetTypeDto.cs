@@ -21,7 +21,7 @@ namespace Empiria.Budgeting.Adapters {
       get; internal set;
     }
 
-    public FixedList<BudgetAccountSegmentTypeDto> SegmentTypes {
+    public FixedList<BudgetSegmentTypeDto> SegmentTypes {
       get; internal set;
     }
 
@@ -29,8 +29,8 @@ namespace Empiria.Budgeting.Adapters {
 
 
 
-  /// <summary>Output DTO for BudgetAccountSegmentType instances.</summary>
-  public class BudgetAccountSegmentTypeDto {
+  /// <summary>Output DTO for BudgetSegmentType instances.</summary>
+  public class BudgetSegmentTypeDto {
 
     public string UID {
       get; internal set;
@@ -40,6 +40,6 @@ namespace Empiria.Budgeting.Adapters {
       get; internal set;
     }
 
-  }  // class SegmentTypeDto
+  }  // class BudgetSegmentTypeDto
 
 }  // namespace Empiria.Budgeting.Adapters
