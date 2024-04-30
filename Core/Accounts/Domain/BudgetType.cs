@@ -1,45 +1,41 @@
 ﻿/* Empiria Financial *****************************************************************************************
 *                                                                                                            *
 *  Module   : Budget Accounts                            Component : Domain Layer                            *
-*  Assembly : Empiria.Budgeting.Core.dll                 Pattern   : Aggregate Root                          *
+*  Assembly : Empiria.Budgeting.Core.dll                 Pattern   : Power Type                              *
 *  Type     : BudgetType                                 License   : Please read LICENSE.txt file            *
 *                                                                                                            *
-*  Summary  : Represents a budget type and serves as an aggregate root for its accounts.                     *
+*  Summary  : Power type that describes a budget.                                                            *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System;
 
+using Empiria.Ontology;
+
 namespace Empiria.Budgeting {
 
-  /// <summary>Represents a budget type and serves as an aggregate root for its accounts.</summary>
-  public class BudgetType : GeneralObject {
+  /// <summary>Power type that describes a budget.</summary>
+  [Powertype(typeof(Budget))]
+  public class BudgetType : Powertype {
 
     #region Constructors and parsers
 
-    protected BudgetType() {
-      // Required by Empiria Framework.
+    private BudgetType() {
+      // Empiria powertype types always have this constructor.
     }
 
-
-    static public BudgetType Parse(int id) {
-      return BaseObject.ParseId<BudgetType>(id);
+    static public new BudgetType Parse(int typeId) {
+      return ObjectTypeInfo.Parse<BudgetType>(typeId);
     }
 
-
-    static public BudgetType Parse(string uid) {
-      return BaseObject.ParseKey<BudgetType>(uid);
+    static public new BudgetType Parse(string typeName) {
+      return BudgetType.Parse<BudgetType>(typeName);
     }
-
 
     static public FixedList<BudgetType> GetList() {
-      return BaseObject.GetList<BudgetType>(string.Empty, "ObjectName")
-                       .FindAll(x => x.Status != StateEnums.EntityStatus.Deleted)
-                       .ToFixedList();
+      return BaseBudgetType.ExtensionData.GetFixedList<BudgetType>("budgetTypes");
     }
 
-
-    static public BudgetType Empty => BaseObject.ParseEmpty<BudgetType>();
-
+    static private ObjectTypeInfo BaseBudgetType => Powertype.Parse("ObjectTypeInfo.PowerType.BudgetType");
 
     #endregion Constructors and parsers
 
@@ -47,7 +43,7 @@ namespace Empiria.Budgeting {
 
     public FixedList<BudgetSegmentType> SegmentTypes {
       get {
-        return base.ExtendedDataField.GetFixedList<BudgetSegmentType>("segmentTypes");
+        return base.ExtensionData.GetFixedList<BudgetSegmentType>("segmentTypes");
       }
     }
 
