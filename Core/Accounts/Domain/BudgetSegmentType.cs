@@ -4,7 +4,7 @@
 *  Assembly : Empiria.Budgeting.Core.dll                 Pattern   : Power type                              *
 *  Type     : BudgetSegmentType                          License   : Please read LICENSE.txt file            *
 *                                                                                                            *
-*  Summary  : Power type that describes a budget segment partitioned type.                                   *
+*  Summary  : Power type that describes a BudgetSegmentItem partitioned type.                                *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System;
@@ -13,8 +13,8 @@ using Empiria.Ontology;
 
 namespace Empiria.Budgeting {
 
-  /// <summary>Power type that describes a budget segment partitioned type.</summary>
-  [Powertype(typeof(BudgetSegment))]
+  /// <summary>Power type that describes a BudgetSegmentItem partitioned type.</summary>
+  [Powertype(typeof(BudgetSegmentItem))]
   public sealed class BudgetSegmentType : Powertype {
 
     #region Constructors and parsers
