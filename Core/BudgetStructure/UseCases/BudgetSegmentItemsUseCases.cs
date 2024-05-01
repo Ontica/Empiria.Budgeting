@@ -33,7 +33,7 @@ namespace Empiria.Budgeting.UseCases {
 
     #region Use cases
 
-    public FixedList<BudgetSegmentItemDto> BudgetSegmentItems(string segmentTypeUID) {
+    public FixedList<BudgetSegmentItemDto> BudgetSegmentItemsByType(string segmentTypeUID) {
       Assertion.Require(segmentTypeUID, nameof(segmentTypeUID));
 
       var segmentType = BudgetSegmentType.Parse(segmentTypeUID);

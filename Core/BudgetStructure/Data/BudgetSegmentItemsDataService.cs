@@ -19,6 +19,7 @@ namespace Empiria.Budgeting.Data {
     static internal FixedList<BudgetSegmentItem> SegmentItems(BudgetSegmentType segmentType) {
       var sql = "SELECT * FROM BDG_SEGMENT_ITEMS " +
                 $"WHERE BDG_SEGMENT_TYPE_ID = {segmentType.Id} " +
+                "AND BDG_SEGMENT_ITEM_STATUS <> 'X' " +
                 $"ORDER BY BDG_SEGMENT_ITEM_CODE";
 
       var dataOperation = DataOperation.Parse(sql);
@@ -29,6 +30,7 @@ namespace Empiria.Budgeting.Data {
     static internal FixedList<BudgetSegmentItem> SegmentItemChildren(BudgetSegmentItem segmentItem) {
       var sql = "SELECT * FROM BDG_SEGMENT_ITEMS " +
                 $"WHERE BDG_SEGMENT_ITEM_PARENT_ID = {segmentItem.Id} " +
+                "AND BDG_SEGMENT_ITEM_STATUS <> 'X' " +
                 $"ORDER BY BDG_SEGMENT_ITEM_CODE";
 
       var dataOperation = DataOperation.Parse(sql);

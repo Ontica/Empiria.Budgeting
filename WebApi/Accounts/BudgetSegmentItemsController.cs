@@ -22,13 +22,13 @@ namespace Empiria.Budgeting.WebApi {
     #region Web Apis
 
     [HttpGet]
-    [Route("v2/budgeting/budget-segment-items/{segmentTypeUID}")]
-    public CollectionModel GetBudgetSegmentItems([FromUri] string segmentTypeUID) {
+    [Route("v2/budgeting/budget-segment-items/by-type/{segmentTypeUID}")]
+    public CollectionModel GetBudgetSegmentItemsByType([FromUri] string segmentTypeUID) {
 
       base.SetOperation($"Se leyeron los elementos de un segmento.");
 
       using (var usecases = BudgetSegmentItemsUseCases.UseCaseInteractor()) {
-        FixedList<BudgetSegmentItemDto> segmentItems = usecases.BudgetSegmentItems(segmentTypeUID);
+        FixedList<BudgetSegmentItemDto> segmentItems = usecases.BudgetSegmentItemsByType(segmentTypeUID);
 
         return new CollectionModel(base.Request, segmentItems);
       }

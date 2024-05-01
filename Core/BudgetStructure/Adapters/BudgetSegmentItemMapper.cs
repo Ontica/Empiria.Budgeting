@@ -21,7 +21,7 @@ namespace Empiria.Budgeting.Adapters {
     static private BudgetSegmentItemDto Map(BudgetSegmentItem segmentItem) {
       BudgetSegmentItemDto dto = MapWithoutStructure(segmentItem);
 
-      if (!segmentItem.Parent.IsEmptyInstance && segmentItem.Parent.Distinct(segmentItem)) {
+      if (segmentItem.HasParent) {
         dto.Parent = MapWithoutStructure(segmentItem.Parent);
       }
 
@@ -37,7 +37,7 @@ namespace Empiria.Budgeting.Adapters {
         Code = segmentItem.Code,
         Name = segmentItem.Name,
         Description = segmentItem.Description,
-        Type = BudgetTypesMapper.MapWithoutStructure(segmentItem.BudgetSegmentType)
+        Type = BudgetSegmentTypesMapper.MapWithoutStructure(segmentItem.BudgetSegmentType)
       };
     }
 

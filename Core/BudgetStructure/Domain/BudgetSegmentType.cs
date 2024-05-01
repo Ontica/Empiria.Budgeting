@@ -68,6 +68,20 @@ namespace Empiria.Budgeting {
     }
 
 
+    public bool HasParentSegmentType {
+      get {
+        return !ParentSegmentType.IsEmptyInstance;
+      }
+    }
+
+
+    public bool HasChildrenSegmentType {
+      get {
+        return !ChildrenSegmentType.IsEmptyInstance;
+      }
+    }
+
+
     public BudgetSegmentType ParentSegmentType {
       get {
         if (this.IsEmptyInstance) {

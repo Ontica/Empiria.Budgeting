@@ -90,6 +90,14 @@ namespace Empiria.Budgeting {
       }
     }
 
+
+    public bool HasParent {
+      get {
+        return !Parent.IsEmptyInstance && Parent.Distinct(this);
+      }
+    }
+
+
     [DataField("BDG_SEGMENT_ITEM_EXT_DATA")]
     private JsonObject ExtensionData {
       get; set;
@@ -149,7 +157,7 @@ namespace Empiria.Budgeting {
     #region Methods
 
     protected override void OnLoad() {
-      if (!this.BudgetSegmentType.ChildrenSegmentType.IsEmptyInstance) {
+      if (this.BudgetSegmentType.HasChildrenSegmentType) {
         _children = new Lazy<FixedList<BudgetSegmentItem>>(() => BudgetSegmentItemsDataService.SegmentItemChildren(this));
       } else {
         _children = new Lazy<FixedList<BudgetSegmentItem>>(() => new FixedList<BudgetSegmentItem>());
