@@ -20,8 +20,8 @@ namespace Empiria.Budgeting.Adapters {
 
     static internal BudgetTypeDto Map(BudgetType budgetType) {
       return new BudgetTypeDto {
-        UID = budgetType.UID,
-        Name = budgetType.Name,
+        UID = budgetType.Name,
+        Name = budgetType.DisplayName,
         SegmentTypes = Map(budgetType.SegmentTypes)
       };
     }
@@ -34,6 +34,22 @@ namespace Empiria.Budgeting.Adapters {
 
 
     static private BudgetSegmentTypeDto Map(BudgetSegmentType segmentType) {
+      var dto = MapWithoutStructure(segmentType);
+
+      if (!segmentType.ParentSegmentType.IsEmptyInstance) {
+        dto.ParentSegmentType = MapWithoutStructure(segmentType.ParentSegmentType);
+        dto.ParentSegmentType.Name = segmentType.ParentSegmentType.AsParentName;
+      }
+
+      if (!segmentType.ChildrenSegmentType.IsEmptyInstance) {
+        dto.ChildrenSegmentType = MapWithoutStructure(segmentType.ChildrenSegmentType);
+        dto.ChildrenSegmentType.Name = segmentType.ChildrenSegmentType.AsChildrenName;
+      }
+
+      return dto;
+    }
+
+    private static BudgetSegmentTypeDto MapWithoutStructure(BudgetSegmentType segmentType) {
       return new BudgetSegmentTypeDto {
         UID = segmentType.UID,
         Name = segmentType.DisplayName

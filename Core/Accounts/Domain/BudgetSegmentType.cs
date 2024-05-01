@@ -31,7 +31,54 @@ namespace Empiria.Budgeting {
       return BudgetAccountType.Parse<BudgetSegmentType>(typeName);
     }
 
+    static public BudgetSegmentType Empty => BudgetSegmentType.Parse("ObjectTypeInfo.BudgetSegmentType");
+
     #endregion Constructors and parsers
+
+    #region Properties
+
+    public bool IsEmptyInstance {
+      get {
+        return this.Equals(BudgetSegmentType.Empty);
+      }
+    }
+
+    public string AsChildrenName {
+      get {
+        return base.ExtensionData.Get<string>("asChildrenName", base.DisplayPluralName);
+      }
+    }
+
+
+    public string AsParentName {
+      get {
+        return base.ExtensionData.Get<string>("asParentName", base.DisplayName);
+      }
+    }
+
+
+    public BudgetSegmentType ChildrenSegmentType {
+      get {
+        if (this.IsEmptyInstance) {
+          return this;
+        }
+
+        return base.ExtensionData.Get<BudgetSegmentType>("childrenSegmentTypeId", BudgetSegmentType.Empty);
+      }
+    }
+
+
+    public BudgetSegmentType ParentSegmentType {
+      get {
+        if (this.IsEmptyInstance) {
+          return this;
+        }
+
+        return base.ExtensionData.Get<BudgetSegmentType>("parentSegmentTypeId", BudgetSegmentType.Empty);
+      }
+    }
+
+    #endregion Properties
 
   } // class BudgetSegmentType
 

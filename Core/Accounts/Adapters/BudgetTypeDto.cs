@@ -40,6 +40,14 @@ namespace Empiria.Budgeting.Adapters {
       get; internal set;
     }
 
+    public BudgetSegmentTypeDto ParentSegmentType {
+      get; internal set;
+    }
+
+    public BudgetSegmentTypeDto ChildrenSegmentType {
+      get; internal set;
+    }
+
   }  // class BudgetSegmentTypeDto
 
 }  // namespace Empiria.Budgeting.Adapters
