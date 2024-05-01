@@ -17,6 +17,8 @@ using Empiria.Json;
 using Empiria.Ontology;
 using Empiria.StateEnums;
 
+using Empiria.Budgeting.Data;
+
 namespace Empiria.Budgeting {
 
   /// <summary>Partitioned type of BudgetSegmentType that holds data for a budget segment item.
@@ -25,6 +27,12 @@ namespace Empiria.Budgeting {
   /// BudgetSegmentItem instances are the constitutive parts of budget accounts.</summary>
   [PartitionedType(typeof(BudgetSegmentType))]
   public class BudgetSegmentItem : BaseObject {
+
+    #region Fields
+
+    private Lazy<FixedList<BudgetSegmentItem>> _children;
+
+    #endregion Fields
 
     #region Constructors and parsers
 
@@ -66,6 +74,21 @@ namespace Empiria.Budgeting {
       get; private set;
     }
 
+
+    [DataField("BDG_SEGMENT_ITEM_PARENT_ID")]
+    private int ParentId {
+      get; set;
+    }
+
+
+    public BudgetSegmentItem Parent {
+      get {
+        if (this.IsEmptyInstance || this.ParentId == this.Id) {
+          return this;
+        }
+        return BudgetSegmentItem.Parse(this.ParentId);
+      }
+    }
 
     [DataField("BDG_SEGMENT_ITEM_EXT_DATA")]
     private JsonObject ExtensionData {
@@ -115,7 +138,25 @@ namespace Empiria.Budgeting {
       get; private set;
     }
 
+    public FixedList<BudgetSegmentItem> Children {
+      get {
+        return _children.Value;
+      }
+    }
+
     #endregion Properties
+
+    #region Methods
+
+    protected override void OnLoad() {
+      if (!this.BudgetSegmentType.ChildrenSegmentType.IsEmptyInstance) {
+        _children = new Lazy<FixedList<BudgetSegmentItem>>(() => BudgetSegmentItemsDataService.SegmentItemChildren(this));
+      } else {
+        _children = new Lazy<FixedList<BudgetSegmentItem>>(() => new FixedList<BudgetSegmentItem>());
+      }
+    }
+
+    #endregion Methods
 
   } // class BudgetSegmentItem
 

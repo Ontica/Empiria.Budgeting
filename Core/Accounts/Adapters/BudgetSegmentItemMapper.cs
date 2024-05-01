@@ -14,18 +14,33 @@ namespace Empiria.Budgeting.Adapters {
   /// <summary>Mapping methods for budget segment items.</summary>
   static internal class BudgetSegmentItemMapper {
 
-    static internal FixedList<BudgetSegmentItemDto> Map(FixedList<BudgetSegmentItem> segmentValues) {
-      return segmentValues.Select(x => Map(x)).ToFixedList();
+    static internal FixedList<BudgetSegmentItemDto> Map(FixedList<BudgetSegmentItem> segmentItems) {
+      return segmentItems.Select(x => Map(x)).ToFixedList();
     }
 
-    static private BudgetSegmentItemDto Map(BudgetSegmentItem segmentValue) {
+    static private BudgetSegmentItemDto Map(BudgetSegmentItem segmentItem) {
+      BudgetSegmentItemDto dto = MapWithoutStructure(segmentItem);
+
+      if (!segmentItem.Parent.IsEmptyInstance && segmentItem.Parent.Distinct(segmentItem)) {
+        dto.Parent = MapWithoutStructure(segmentItem.Parent);
+      }
+
+      dto.Children = segmentItem.Children.Select(x => MapWithoutStructure(x))
+                                         .ToFixedList();
+
+      return dto;
+    }
+
+    static private BudgetSegmentItemDto MapWithoutStructure(BudgetSegmentItem segmentItem) {
       return new BudgetSegmentItemDto {
-        UID = segmentValue.UID,
-        Code = segmentValue.Code,
-        Name = segmentValue.Name,
-        Description = segmentValue.Description
+        UID = segmentItem.UID,
+        Code = segmentItem.Code,
+        Name = segmentItem.Name,
+        Description = segmentItem.Description,
+        Type = BudgetTypesMapper.MapWithoutStructure(segmentItem.BudgetSegmentType)
       };
     }
+
   }  // class BudgetSegmentItemMapper
 
 }  // namespace Empiria.Budgeting.Adapters

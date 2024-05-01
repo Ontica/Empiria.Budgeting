@@ -49,7 +49,7 @@ namespace Empiria.Budgeting.Adapters {
       return dto;
     }
 
-    private static BudgetSegmentTypeDto MapWithoutStructure(BudgetSegmentType segmentType) {
+    static internal BudgetSegmentTypeDto MapWithoutStructure(BudgetSegmentType segmentType) {
       return new BudgetSegmentTypeDto {
         UID = segmentType.UID,
         Name = segmentType.DisplayName

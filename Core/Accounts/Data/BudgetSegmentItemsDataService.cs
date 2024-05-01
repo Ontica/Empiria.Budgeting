@@ -26,6 +26,16 @@ namespace Empiria.Budgeting.Data {
       return DataReader.GetFixedList<BudgetSegmentItem>(dataOperation);
     }
 
+    static internal FixedList<BudgetSegmentItem> SegmentItemChildren(BudgetSegmentItem segmentItem) {
+      var sql = "SELECT * FROM BDG_SEGMENT_ITEMS " +
+                $"WHERE BDG_SEGMENT_ITEM_PARENT_ID = {segmentItem.Id} " +
+                $"ORDER BY BDG_SEGMENT_ITEM_CODE";
+
+      var dataOperation = DataOperation.Parse(sql);
+
+      return DataReader.GetFixedList<BudgetSegmentItem>(dataOperation);
+    }
+
   }  // class BudgetSegmentItemsDataService
 
 }  // namespace Empiria.Budgeting.Data
