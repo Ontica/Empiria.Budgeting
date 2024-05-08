@@ -16,16 +16,18 @@ namespace Empiria.Budgeting.Adapters {
 
     #region Mappers
 
-    static internal FixedList<BudgetTypeDto> Map(FixedList<BudgetType> budgetTypes) {
-      return budgetTypes.Select(x => Map(x)).ToFixedList();
+    static internal FixedList<BudgetTypeDto> Map(FixedList<BudgetType> budgetTypes,
+                                                 FixedList<Budget> budgets) {
+      return budgetTypes.Select(x => Map(x, budgets)).ToFixedList();
     }
 
 
-    static internal BudgetTypeDto Map(BudgetType budgetType) {
+    static internal BudgetTypeDto Map(BudgetType budgetType, FixedList<Budget> budgets) {
       return new BudgetTypeDto {
         UID = budgetType.Name,
         Name = budgetType.DisplayName,
-        SegmentTypes = BudgetSegmentTypesMapper.Map(budgetType.SegmentTypes)
+        SegmentTypes = BudgetSegmentTypesMapper.Map(budgetType.SegmentTypes),
+        Budgets = BudgetMapper.Map(budgets.FindAll(x => x.BudgetType.Equals(budgetType)))
       };
     }
 

@@ -25,10 +25,9 @@ namespace Empiria.Budgeting.Adapters {
         UID = budget.UID,
         Name = budget.Name,
         Year = budget.Year,
-        Type = BudgetTypesMapper.Map(budget.BudgetType),
+        Type = new NamedEntityDto(budget.BudgetType.UID, budget.BudgetType.DisplayName)
       };
     }
-
 
     #endregion Helpers
 

@@ -35,7 +35,9 @@ namespace Empiria.Budgeting.UseCases {
     public FixedList<BudgetTypeDto> BudgetTypesList() {
       FixedList<BudgetType> budgetTypes = BudgetType.GetList();
 
-      return BudgetTypesMapper.Map(budgetTypes);
+      FixedList<Budget> budgets = Budget.GetList();
+
+      return BudgetTypesMapper.Map(budgetTypes, budgets);
     }
 
     #endregion Use cases

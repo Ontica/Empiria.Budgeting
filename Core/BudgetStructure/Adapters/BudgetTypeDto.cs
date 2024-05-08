@@ -21,6 +21,10 @@ namespace Empiria.Budgeting.Adapters {
       get; internal set;
     }
 
+    public FixedList<BudgetDto> Budgets {
+      get; internal set;
+    }
+
     public FixedList<BudgetSegmentTypeDto> SegmentTypes {
       get; internal set;
     }

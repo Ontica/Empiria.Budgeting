@@ -25,7 +25,7 @@ namespace Empiria.Budgeting.Adapters {
       get; internal set;
     }
 
-    public BudgetTypeDto Type {
+    public NamedEntityDto Type {
       get; internal set;
     }
 
