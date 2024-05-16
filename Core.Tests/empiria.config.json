@@ -1,7 +1,7 @@
 ﻿{
-  "appName": "Empiria Budgeting Core Tests",
+  "appName": "Empiria Budgeting Management System Core Tests",
   "description": "Domain types, classes and services tests environment settings",
-  "version": "2.0",
+  "version": "1.0",
   "date": "2024-03-08",
   "settings": [
     {

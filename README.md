@@ -4,37 +4,41 @@
 &nbsp; &nbsp;
 [![Maintainability](https://api.codeclimate.com/v1/badges/8a247a73100dca989c0c/maintainability)](https://codeclimate.com/github/Ontica/Empiria.Budgeting/maintainability)
 
+Este producto de software está siendo desarrollado a la medida para el Banco Nacional de Obras y Servicios Públicos, S.N.C (BANOBRAS).
 
-This repository contains the Empiria Budgeting System's backend modules 
-written in C# 7.0 using .NET Framework 4.8, with a Http/Json Web Api integration module
-tailored with ASP .NET.
+[BANOBRAS](https://www.gob.mx/banobras) es una institución de banca de desarrollo mexicana cuya labor
+es financiar obras para la creación de servicios públicos. Por el tamaño de su cartera de crédito directo,
+es el cuarto Banco más grande del sistema bancario mexicano y el primero de la Banca de Desarrollo de nuestro país.
 
-As other Empiria products, this backend runs over [Empiria Framework](https://github.com/Ontica/Empiria.Core),
-and as usual, needs some of the [Empiria Extensions](https://github.com/Ontica/Empiria.Extensions).
+Este repositorio contiene los módulos del *backend* del **Sistema de control presupuestal**.
 
-This custom-tailored budgeting system has been developed for Banco Nacional de Obras y Servicios Públicos, 
-Sociedad Nacional de Crédito, Institución de Banca de Desarrollo (BANOBRAS); a Mexican state owned development bank.
+Todos los módulos están escritos en C# 7.0 y utilizan .NET Framework versión 4.8.  
+Los módulos pueden ser compilados utilizando Visual Studio 2022 Community Edition.
 
-## Contents
+El acceso a los servicios que ofrece el *backend* se realiza mediante llamadas a servicios web de tipo RESTful,
+mismos que están basados en ASP .NET.
 
-Empiria Budgeting comprises the following backend modules:
+Al igual que otros productos Empiria, este *backend* se apoya en [Empiria Framework](https://github.com/Ontica/Empiria.Core),
+y también en algunos módulos de [Empiria Extensions](https://github.com/Ontica/Empiria.Extensions).
+
+
+## Contenido
+
+El *backend* del **Sistema de control presupuestal** se conforma de los siguientes módulos:
 
 1.  **Core**  
-    Budgeting core domain classes and types.
+    Tipos, clases y servicios de propósito general que conforman el núcleo del *backend*.  
 
 2. **Web API**  
-    Http/Json RESTful interface used to interact with the Empiria Budgeting System backend.
-
-
-Each single project can be compiled using Visual Studio 2022 Community Edition.
+    Capa de servicios web HTTP/Json para interactuar con todos los módulos que conforman el *backend* del sistema.  
 
 
 ## Licencia
 
 Este producto y sus partes se distribuyen mediante una licencia GNU AFFERO
 GENERAL PUBLIC LICENSE, para uso exclusivo de BANOBRAS y de su personal, y
-también para su uso por cualquier otro organismo perteneciente a la 
-Administración Pública Federal de México.
+también para su uso por cualquier otro organismo en México perteneciente a
+la Administración Pública Federal.
 
 Para cualquier otro uso (con excepción a lo estipulado en los Términos de
 Servicio de GitHub), es indispensable obtener con nuestra organización una
@@ -45,11 +49,11 @@ instalación, compilación o cualquier otro uso del producto o de sus partes,
 a terceros, empresas privadas o a su personal, sean o no proveedores de
 servicios de las entidades públicas mencionadas.
 
-El desarrollo de este producto fue pagado en su totalidad con recursos
-públicos, y está protegido por las leyes nacionales e internacionales
-de derechos de autor.
+El desarrollo, evolución y mantenimiento de este producto está siendo pagado
+en su totalidad con recursos públicos, y está protegido por las leyes nacionales
+e internacionales de derechos de autor.
 
 ## Copyright
 
-Copyright © 2023-2024. La Vía Óntica SC, Ontica LLC y autores.
+Copyright © 2024-2025. La Vía Óntica SC, Ontica LLC y autores.
 Todos los derechos reservados.

@@ -1,6 +1,6 @@
 ﻿/* Empiria Financial *****************************************************************************************
 *                                                                                                            *
-*  System   : Budgeting System                             Module  : Budgeting System Core Types Tests       *
+*  System   : Budgeting Management System                  Module  : Core Types and Services Tests           *
 *  Assembly : Empiria.Budgeting.Core.Tests.dll             Pattern : Assembly Attributes File                *
 *                                                          License : Please read LICENSE.txt file            *
 *                                                                                                            *

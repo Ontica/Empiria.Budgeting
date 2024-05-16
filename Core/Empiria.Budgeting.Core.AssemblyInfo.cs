@@ -1,13 +1,12 @@
 ﻿/*Empiria Financial ******************************************************************************************
 *                                                                                                            *
-*  System   : Budgeting System                             Module  : Budgeting System Core Types             *
+*  System   : Budgeting Management System                  Module  : Core Types and Services                 *
 *  Assembly : Empiria.Budgeting.Core.dll                   Pattern : Assembly Attributes File                *
 *                                                          License : Please read LICENSE.txt file            *
 *                                                                                                            *
-*  Summary  : Empiria Budgeting System core types, classes and services.                                     *
+*  Summary  : Empiria Budgeting Management System core types, use cases and services.                        *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
-
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
