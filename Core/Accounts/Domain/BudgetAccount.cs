@@ -9,8 +9,8 @@
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System;
 
+using Empiria.Contacts;
 using Empiria.Json;
-
 using Empiria.Ontology;
 using Empiria.StateEnums;
 
@@ -34,7 +34,7 @@ namespace Empiria.Budgeting {
 
     #endregion Constructors and parsers
 
-    #region Public properties
+    #region Properties
 
     public BudgetAccountType BudgetAccountType {
       get {
@@ -43,15 +43,15 @@ namespace Empiria.Budgeting {
     }
 
 
-    [DataField("BDG_ACCT_TYPE_ID")]
+    [DataField("BDG_ACCt_BUDGET_TYPE_ID")]
     public BudgetType BudgetType {
       get;
       private set;
     }
 
 
-    [DataField("BDG_ACCT_KEY")]
-    public string Key {
+    [DataField("BDG_ACCT_CODE")]
+    public string Code {
       get;
       private set;
     }
@@ -75,19 +75,35 @@ namespace Empiria.Budgeting {
       private set;
     }
 
+
     internal protected virtual string Keywords {
       get {
-        return EmpiriaString.BuildKeywords(this.Key);
+        return EmpiriaString.BuildKeywords(this.Code);
       }
     }
 
-    [DataField("BDG_ACCT_ITEM_STATUS", Default = EntityStatus.Active)]
+
+    [DataField("BDG_ACCT_POSTED_BY_ID")]
+    public Person PostedById {
+      get;
+      private set;
+    }
+
+
+    [DataField("BDG_ACCT_POSTING_TIME")]
+    public DateTime PostingTime {
+      get;
+      private set;
+    }
+
+
+    [DataField("BDG_ACCT_STATUS", Default = EntityStatus.Active)]
     public EntityStatus Status {
       get;
       private set;
     }
 
-    #endregion Public properties
+    #endregion Properties
 
   } // class BudgetAccount
 

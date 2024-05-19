@@ -57,25 +57,25 @@ namespace Empiria.Budgeting {
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_CODE")]
+    [DataField("BDG_SEG_ITEM_CODE")]
     public string Code {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_NAME")]
+    [DataField("BDG_SEG_ITEM_NAME")]
     public string Name {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_DESCRIPTION")]
+    [DataField("BDG_SEG_ITEM_DESCRIPTION")]
     public string Description {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_PARENT_ID")]
+    [DataField("BDG_SEG_ITEM_PARENT_ID")]
     private int ParentId {
       get; set;
     }
@@ -98,25 +98,25 @@ namespace Empiria.Budgeting {
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_EXT_DATA")]
-    private JsonObject ExtensionData {
+    [DataField("BDG_SEG_ITEM_EXT_DATA")]
+    internal JsonObject ExtensionData {
       get; set;
     } = new JsonObject();
 
 
-    [DataField("BDG_SEGMENT_ITEM_START_DATE")]
+    [DataField("BDG_SEG_ITEM_START_DATE")]
     public DateTime StartDate {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_END_DATE")]
+    [DataField("BDG_SEG_ITEM_END_DATE")]
     public DateTime EndDate {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_EXT_OBJECT_REF_ID")]
+    [DataField("BDG_SEG_ITEM_EXT_OBJECT_REF_ID")]
     public int ExternalObjectReferenceId {
       get; private set;
     }
@@ -129,19 +129,19 @@ namespace Empiria.Budgeting {
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_POSTED_BY_ID")]
-    public Contact PostedById {
+    [DataField("BDG_SEG_ITEM_POSTED_BY_ID")]
+    public Contact PostedBy {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_POSTING_TIME")]
+    [DataField("BDG_SEG_ITEM_POSTING_TIME")]
     public DateTime PostingTime {
       get; private set;
     }
 
 
-    [DataField("BDG_SEGMENT_ITEM_STATUS", Default = EntityStatus.Active)]
+    [DataField("BDG_SEG_ITEM_STATUS", Default = EntityStatus.Active)]
     public EntityStatus Status {
       get; private set;
     }
