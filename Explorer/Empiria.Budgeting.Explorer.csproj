@@ -3,32 +3,33 @@
     <Company>Ontica</Company>
     <Product>Empiria Budgeting</Product>
     <Description>
-      HTTP/JSON web api used to interact with the Empiria Budgeting Management System backend.
+      Budget grouping and searching services.
     </Description>
     <Copyright>(c) 2024-2025. La Vía Óntica SC, Ontica LLC y de los autores. Todos los derechos reservados.</Copyright>
-    <Version>2.0</Version>
+    <Version>2.0.0</Version>
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://github.com/Ontica/Empiria.Budgeting/tree/master/WebApi/LICENSE.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Ontica/Empiria.Budgeting/tree/master/WebApi</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Ontica/Empiria.Budgeting/blob/master/Explorer/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Ontica/Empiria.Budgeting/tree/master/Explorer</PackageProjectUrl>
     <PackageIconUrl>http://www.ontica.org/logo.ontica.png</PackageIconUrl>
     <PackageTags>
       Control presupuestal, ejercicio prespuestal, presupuesto por programas, gasto corriente,
-      programa financiero, servicios web, Banca de desarrollo, BANOBRAS, México
+      programa financiero, Banca de desarrollo, BANOBRAS, México
     </PackageTags>
-    <RepositoryUrl>https://github.com/Ontica/Empiria.Budgeting</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Ontica/Empiria.Explorer</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Authors>Ontica</Authors>
     <TargetFramework>net48</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <NeutralLanguage></NeutralLanguage>
     <Configurations>Debug;Release;Multisolutions</Configurations>
-    <AssemblyName>Empiria.Budgeting.WebApi</AssemblyName>
-    <RootNamespace>Empiria.Budgeting.WebApi</RootNamespace>
+    <AssemblyName>Empiria.Budgeting.Explorer</AssemblyName>
+    <RootNamespace>Empiria.Budgeting.Explorer</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Multisolutions|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' Or '$(Configuration)|$(Platform)'=='Multisolutions|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -40,7 +41,7 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <NoWarn />
+    <NoWarn>CS1591</NoWarn>
     <WarningsAsErrors />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -55,32 +56,20 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <NoWarn />
+    <NoWarn>CS1591</NoWarn>
     <WarningsAsErrors />
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Net.Http" />
-  </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' != 'Multisolutions' ">
-    <PackageReference Include="Empiria.WebApi" Version="2.0.0" />
+    <PackageReference Include="Empiria.Core" Version="7.0.0" />
+    <PackageReference Include="Empiria.Services" Version="1.0.0" />
     <PackageReference Include="Empiria.Budgeting.Core" Version="2.0.0" />
-    <PackageReference Include="Empiria.Budgeting.Explorer" Version="2.0.0" />
-    <PackageReference Include="Empiria.Budgeting.Processes" Version="2.0.0" />
-    <PackageReference Include="Empiria.Budgeting.Transactions" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Multisolutions' ">
-    <ProjectReference Include="..\..\extensions\WebApi\Empiria.WebApi.csproj" />
+    <ProjectReference Include="..\..\core\Core\Empiria.Core.csproj" />
+    <ProjectReference Include="..\..\extensions\Services\Empiria.Services.csproj" />
     <ProjectReference Include="..\Core\Empiria.Budgeting.Core.csproj" />
-    <ProjectReference Include="..\Explorer\Empiria.Budgeting.Explorer.csproj" />
-    <ProjectReference Include="..\Processes\Empiria.Budgeting.Processes.csproj" />
-    <ProjectReference Include="..\Transactions\Empiria.Budgeting.Transactions.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="empiria.config.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="empiria.environment.vars.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Domain\" />
   </ItemGroup>
 </Project>

@@ -29,7 +29,17 @@ El *backend* del **Sistema de control presupuestal** se conforma de los siguient
 1.  **Core**  
     Tipos, clases y servicios de propósito general que conforman el núcleo del *backend*.  
 
-2. **Web API**  
+2.  **Explorer**  
+    Servicios para obtener información de presupuestos agrupada y consolidada de diferentes formas. 
+
+3.  **Processes**  
+    Administra los procesos presupuestales. 
+
+4.  **Transactions**  
+    Permite generar y almacenar transacciones presupuestales. Cada transacción tiene una o más  
+    entradas las cuales están asociadas a las cuentas que conforman los presupuestos. 
+
+5. **Web API**  
     Capa de servicios web HTTP/Json para interactuar con todos los módulos que conforman el *backend* del sistema.  
 
 
