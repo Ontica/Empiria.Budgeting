@@ -25,8 +25,6 @@ namespace Empiria.Budgeting.WebApi {
     [Route("v2/budgeting/budget-types")]
     public CollectionModel GetBudgetTypes() {
 
-      base.SetOperation($"Se leyó la lista de tipos de presupuestos.");
-
       using (var usecases = BudgetTypesUseCases.UseCaseInteractor()) {
         FixedList<BudgetTypeDto> list = usecases.BudgetTypesList();
 

@@ -25,8 +25,6 @@ namespace Empiria.Budgeting.WebApi {
     [Route("v2/budgeting/budget-segment-items/by-type/{segmentTypeUID}")]
     public CollectionModel GetBudgetSegmentItemsByType([FromUri] string segmentTypeUID) {
 
-      base.SetOperation($"Se leyeron los elementos de un segmento.");
-
       using (var usecases = BudgetSegmentItemsUseCases.UseCaseInteractor()) {
         FixedList<BudgetSegmentItemDto> segmentItems = usecases.BudgetSegmentItemsByType(segmentTypeUID);
 

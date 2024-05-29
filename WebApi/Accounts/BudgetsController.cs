@@ -25,8 +25,6 @@ namespace Empiria.Budgeting.WebApi {
     [Route("v2/budgeting/budgets")]
     public CollectionModel GetBudgetsList() {
 
-      base.SetOperation($"Se leyó la lista de presupuestos.");
-
       using (var usecases = BudgetUseCases.UseCaseInteractor()) {
         FixedList<BudgetDto> list = usecases.BudgetsList();
 
