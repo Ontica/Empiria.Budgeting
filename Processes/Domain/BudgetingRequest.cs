@@ -43,8 +43,8 @@ namespace Empiria.Budgeting.Processes {
       this.ControlID = $"{DateTime.Today.Year}-00001";
       this.Budget = Budget.Parse(fields.RequestTypeFields.Find(x => x.Field == "budget").Value);
       this.Requester = Person.Parse(ExecutionServer.CurrentUserId);
-      this.RequesterName = this.Requester.Name;
-      this.Description = this.RequestType.DisplayName;
+      this.RequesterName = Requester.Name;
+      this.Description = $"{RequestType.DisplayName} - {Budget.Name}";
     }
 
   }  // class BudgetingRequest

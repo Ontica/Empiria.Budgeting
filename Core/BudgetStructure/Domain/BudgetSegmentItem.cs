@@ -116,7 +116,7 @@ namespace Empiria.Budgeting {
     }
 
 
-    [DataField("BDG_SEG_ITEM_EXT_OBJECT_REF_ID")]
+    [DataField("BDG_SEG_ITEM_EXT_OBJECT_ID")]
     public int ExternalObjectReferenceId {
       get; private set;
     }
@@ -162,6 +162,10 @@ namespace Empiria.Budgeting {
       } else {
         _children = new Lazy<FixedList<BudgetSegmentItem>>(() => new FixedList<BudgetSegmentItem>());
       }
+    }
+
+    protected override void OnSave() {
+      BudgetSegmentItemsDataService.Write(this);
     }
 
     #endregion Methods

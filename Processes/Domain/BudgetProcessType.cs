@@ -14,13 +14,7 @@ using Empiria.Workflow.Definition;
 namespace Empiria.Budgeting.Processes {
 
   /// <summary>Represents a budget process type.</summary>
-  public class BudgetProcessType : ProcessType {
-
-    public FixedList<Budget> Budgets {
-      get {
-        return ExtendedDataField.GetFixedList<Budget>("budgets");
-      }
-    }
+  public class BudgetProcessType : ProcessDef {
 
   }  // class BudgetProcessType
 

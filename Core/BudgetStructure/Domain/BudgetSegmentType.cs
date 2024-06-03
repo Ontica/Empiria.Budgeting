@@ -20,7 +20,7 @@ namespace Empiria.Budgeting {
     #region Constructors and parsers
 
     private BudgetSegmentType() {
-      // Empiria powertype types always have this constructor.
+      // Empiria power types always have this constructor.
     }
 
     static public new BudgetSegmentType Parse(int typeId) {

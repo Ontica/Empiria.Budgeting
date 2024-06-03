@@ -42,7 +42,9 @@ namespace Empiria.Budgeting {
     static public FixedList<Budget> GetList() {
       return BaseObject.GetList<Budget>(string.Empty, "ObjectName")
                        .FindAll(x => x.Status != StateEnums.EntityStatus.Deleted)
-                       .ToFixedList();
+                       .ToFixedList()
+                       .Sort((x, y) => x.Year.CompareTo(y.Year))
+                       .Reverse();
     }
 
 
