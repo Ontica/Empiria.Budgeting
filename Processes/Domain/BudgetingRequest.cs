@@ -11,8 +11,8 @@ using System;
 
 using Empiria.Parties;
 
-using Empiria.OnePoint.Requests;
-using Empiria.OnePoint.Requests.Adapters;
+using Empiria.Workflow.Requests;
+using Empiria.Workflow.Requests.Adapters;
 
 namespace Empiria.Budgeting.Processes {
 
