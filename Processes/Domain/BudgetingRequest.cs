@@ -8,7 +8,9 @@
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 using System;
+using System.Collections.Generic;
 
+using Empiria.DataObjects;
 using Empiria.Parties;
 
 using Empiria.Workflow.Requests;
@@ -31,6 +33,14 @@ namespace Empiria.Budgeting.Processes {
       }
       private set {
         base.ExtensionData.Set("budgetId", value.Id);
+      }
+    }
+
+    public override FixedList<FieldValue> RequestTypeFields {
+      get {
+        return new List<FieldValue> {
+          new FieldValue { Field = "budget", Value = Budget.UID }
+        }.ToFixedList();
       }
     }
 
