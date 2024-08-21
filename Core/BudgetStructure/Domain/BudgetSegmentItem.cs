@@ -59,26 +59,26 @@ namespace Empiria.Budgeting {
 
     [DataField("BDG_SEG_ITEM_CODE")]
     public string Code {
-      get; private set;
+      get; protected set;
     }
 
 
     [DataField("BDG_SEG_ITEM_NAME")]
     public string Name {
-      get; private set;
+      get; protected set;
     }
 
 
     [DataField("BDG_SEG_ITEM_DESCRIPTION")]
     public string Description {
-      get; private set;
+      get; protected set;
     }
 
 
-    [DataField("BDG_SEG_ITEM_PARENT_ID")]
+    [DataField("BDG_SEG_ITEM_PARENT_ID", Default = -1)]
     private int ParentId {
       get; set;
-    }
+    } = -1;
 
 
     public BudgetSegmentItem Parent {
@@ -121,6 +121,10 @@ namespace Empiria.Budgeting {
       get; private set;
     }
 
+    [DataField("BDG_SEG_ITEM_HISTORIC_ID")]
+    public int HistoryId {
+      get; private set;
+    }
 
     internal protected virtual string Keywords {
       get {

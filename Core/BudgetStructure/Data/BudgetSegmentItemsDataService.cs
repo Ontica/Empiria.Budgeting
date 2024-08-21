@@ -43,9 +43,9 @@ namespace Empiria.Budgeting.Data {
     static internal void Write(BudgetSegmentItem o) {
       var op = DataOperation.Parse("write_BDG_SEGMENT_ITEM",
                           o.Id, o.UID, o.BudgetSegmentType.Id,
-                          o.Code, o.Name, o.Description,
-                          o.Parent.Id, o.ExternalObjectReferenceId,
-                          o.ExtensionData.ToString(), o.StartDate, o.EndDate,
+                          o.Code, o.Name, o.Description, o.ExternalObjectReferenceId,
+                          o.ExtensionData.ToString(), o.Keywords, o.Id,
+                          o.StartDate, o.EndDate, o.Parent.Id,
                           o.PostedBy.Id, o.PostingTime, (char) o.Status);
 
       DataReader.GetFixedList<BudgetSegmentItem>(op);
