@@ -33,6 +33,8 @@ namespace Empiria.Budgeting {
 
     static public BudgetSegmentType Empty => BudgetSegmentType.Parse("ObjectTypeInfo.BudgetSegmentType");
 
+    static public BudgetSegmentType ProjectType => BudgetSegmentType.Parse("ObjectTypeInfo.BudgetSegmentType.Proyecto");
+
     #endregion Constructors and parsers
 
     #region Properties
