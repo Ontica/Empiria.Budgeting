@@ -26,7 +26,7 @@ namespace Empiria.Budgeting {
   /// budget concepts or units, activities, financial sources, geographic regions, etcetera.
   /// BudgetSegmentItem instances are the constitutive parts of budget accounts.</summary>
   [PartitionedType(typeof(BudgetSegmentType))]
-  public class BudgetSegmentItem : BaseObject {
+  public class BudgetSegmentItem : BaseObject, INamedEntity {
 
     #region Fields
 
