@@ -7,11 +7,10 @@
 *  Summary  : Represents a budgeting request.                                                                *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
-using System;
+
 using System.Collections.Generic;
 
 using Empiria.DataObjects;
-using Empiria.Parties;
 
 using Empiria.Workflow.Requests;
 using Empiria.Workflow.Requests.Adapters;
@@ -46,16 +45,16 @@ namespace Empiria.Budgeting.Processes {
 
     #endregion Properties
 
+    #region Methods
+
     protected override void Update(RequestFieldsDto fields) {
       base.Update(fields);
 
-      this.UniqueID = $"GPCP-{DateTime.Today.Year}-00001";
-      this.ControlID = $"{DateTime.Today.Year}-00001";
       this.Budget = Budget.Parse(fields.RequestTypeFields.Find(x => x.Field == "budget").Value);
-      this.Requester = Person.Parse(ExecutionServer.CurrentUserId);
-      this.RequesterName = Requester.Name;
       this.Description = $"{RequestType.DisplayName} - {Budget.Name}";
     }
+
+    #endregion Methods
 
   }  // class BudgetingRequest
 
