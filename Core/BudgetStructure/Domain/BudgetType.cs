@@ -35,6 +35,8 @@ namespace Empiria.Budgeting {
       return BaseBudgetType.ExtensionData.GetFixedList<BudgetType>("budgetTypes");
     }
 
+    static public BudgetType Empty => BudgetType.Parse("ObjectTypeInfo.Budget.Empty");
+
     static private ObjectTypeInfo BaseBudgetType => Powertype.Parse("ObjectTypeInfo.PowerType.BudgetType");
 
     #endregion Constructors and parsers
