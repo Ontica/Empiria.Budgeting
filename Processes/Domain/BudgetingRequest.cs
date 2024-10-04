@@ -47,11 +47,14 @@ namespace Empiria.Budgeting.Processes {
 
     #region Methods
 
-    protected override void Update(RequestFieldsDto fields) {
+    protected override void Update(RequestFields fields) {
       base.Update(fields);
 
       this.Budget = Budget.Parse(fields.RequestTypeFields.Find(x => x.Field == "budget").Value);
-      this.Description = $"{RequestType.DisplayName} - {Budget.Name}";
+
+      if (fields.Description.Length == 0) {
+        this.Description = $"{RequestType.DisplayName} - {Budget.Year}";
+      }
     }
 
     #endregion Methods
