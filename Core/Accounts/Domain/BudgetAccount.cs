@@ -30,7 +30,7 @@ namespace Empiria.Budgeting {
 
     static public BudgetAccount Parse(string uid) => BaseObject.ParseKey<BudgetAccount>(uid);
 
-    static private BudgetAccount Empty => BaseObject.ParseEmpty<BudgetAccount>();
+    static internal BudgetAccount Empty => BaseObject.ParseEmpty<BudgetAccount>();
 
     #endregion Constructors and parsers
 
