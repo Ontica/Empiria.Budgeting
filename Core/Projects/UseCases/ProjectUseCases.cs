@@ -57,6 +57,7 @@ namespace Empiria.Projects.UseCases {
       return ProjectMapper.Map(values);
     }
 
+
     public FixedList<ProjectDto> ProjectList() {
 
       FixedList<Project> values = Project.GetList();

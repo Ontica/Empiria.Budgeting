@@ -1,4 +1,4 @@
-﻿# Empiria Budgeting Management System - Transactions Module
+﻿# Empiria Budget Transactions Module
 
 Manages budget transactions and their entries.
 

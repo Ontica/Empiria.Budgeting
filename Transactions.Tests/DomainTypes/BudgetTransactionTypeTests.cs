@@ -1,19 +1,20 @@
 ﻿/* Empiria Financial *****************************************************************************************
 *                                                                                                            *
-*  Module   : Accounts Chart                             Component : Test cases                              *
-*  Assembly : Empiria.FinancialAccounting.Tests.dll      Pattern   : Use cases tests                         *
-*  Type     : AccountsChartUseCasesTests                 License   : Please read LICENSE.txt file            *
+*  Module   : Budget Transactions                        Component : Test cases                              *
+*  Assembly : Empiria.Budgeting.Transactions.Tests.dll   Pattern   : Unit tests                              *
+*  Type     : BudgetTransactionTypeTests                 License   : Please read LICENSE.txt file            *
 *                                                                                                            *
-*  Summary  : Test cases for retrieving accounts from the accounts chart.                                    *
+*  Summary  : Unit tests for budget transaction types.                                                       *
 *                                                                                                            *
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
+
 using Xunit;
 
 using Empiria.Budgeting.Transactions;
 
 namespace Empiria.Tests.Budgeting.Transactions {
 
-  /// <summary>Test cases for retrieving accounts from the accounts chart.</summary>
+  /// <summary>Unit tests for budget transaction types.</summary>
   public class BudgetTransactionTypeTests {
 
     #region Facts

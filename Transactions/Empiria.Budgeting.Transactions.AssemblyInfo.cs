@@ -1,6 +1,6 @@
 ﻿/*Empiria Financial ******************************************************************************************
 *                                                                                                            *
-*  System   : Budgeting Management System                  Module  : Budgeting Transactions                  *
+*  System   : Budgeting Management System                  Module  : Budget Transactions                     *
 *  Assembly : Empiria.Budgeting.Transactions.dll           Pattern : Assembly Attributes File                *
 *                                                          License : Please read LICENSE.txt file            *
 *                                                                                                            *

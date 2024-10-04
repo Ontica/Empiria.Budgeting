@@ -1,6 +1,6 @@
 ﻿/* Empiria Financial *****************************************************************************************
 *                                                                                                            *
-*  Module   : Budgeting Transactions                     Component : Adapters Layer                          *
+*  Module   : Budget Transactions                        Component : Adapters Layer                          *
 *  Assembly : Empiria.Budgeting.Transactions.dll         Pattern   : Input Fields DTO                        *
 *  Type     : BudgetTransactionFields                    License   : Please read LICENSE.txt file            *
 *                                                                                                            *

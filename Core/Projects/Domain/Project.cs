@@ -9,6 +9,7 @@
 ************************* Copyright(c) La Vía Óntica SC, Ontica LLC and contributors. All rights reserved. **/
 
 using Empiria.Budgeting;
+
 using Empiria.Projects.Adapters;
 using Empiria.ProjectTypes;
 
@@ -58,20 +59,13 @@ namespace Empiria.Projects {
 
     #endregion Constructors and parsers
 
-    #region Properties
-
-    #endregion Properties
-
-
     private void Load(ProjectFields fields) {
 
       base.Name = fields.Name;
       base.Description = fields.Description;
       base.Code = fields.Code;
-
     }
 
   }  // class Project
 
 }  // namespace Empiria.Projects
-

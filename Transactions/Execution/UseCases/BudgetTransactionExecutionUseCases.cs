@@ -1,6 +1,6 @@
 ﻿/* Empiria Financial *****************************************************************************************
 *                                                                                                            *
-*  Module   : Budgeting Transactions                     Component : Use cases Layer                         *
+*  Module   : Budget Transactions                        Component : Use cases Layer                         *
 *  Assembly : Empiria.Budgeting.Transactions.dll         Pattern   : Use case interactor class               *
 *  Type     : BudgetTransactionExecutionUseCases         License   : Please read LICENSE.txt file            *
 *                                                                                                            *
