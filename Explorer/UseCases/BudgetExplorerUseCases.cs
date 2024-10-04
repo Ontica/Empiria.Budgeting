@@ -35,7 +35,7 @@ namespace Empiria.Budgeting.UseCases {
     public BudgetExplorerResultDto RetrievePlannedBudget(BudgetExplorerQuery query) {
       Assertion.Require(query, nameof(query));
 
-      throw new NotImplementedException();
+      return new BudgetExplorerResultDto();
     }
 
     #endregion Use cases
